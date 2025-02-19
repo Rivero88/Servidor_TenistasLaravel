@@ -22,7 +22,7 @@ class TenistasFactory extends Factory
         'apellidos' => $this->faker->lastName(),
         // randomElement para que se elija uno de los elementos de dentro de array
         'mano' => $this->faker->randomElement(['Diestro', 'Zurdo']),
-        'altura' => $this->faker->numberBetween(150,210),
+        'altura' => $this->faker->numberBetween(170,210),
         // $this->faker->date('Y');  // Ejemplo: '2025'
         'anno_nacimiento' => $this->faker->numberBetween(1980,2008),
         ];

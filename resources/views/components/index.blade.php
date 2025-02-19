@@ -1,22 +1,4 @@
 <!-- para llamar a los componentes dentro de views/components-->
-{{-- <x-tenistas-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-black-800 dark:text-white leading-tight">
-            Listado de Tenistas
-        </h2>
-    </x-slot>  
- <!-- definimos el contenido a renderizar ( no hace falta poner slot )-->
- <div class="py-12">
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-        <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-            <div class="p-g sm:px.20 bg-white border-b border-gray-200">
-                LISTADO TENISTAS
-            </div>
-        </div>
-    </div>
-    @dump($tenistas)
-</x-tenistas-layout> --}}
-
 <x-tenistas-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-white leading-tight">

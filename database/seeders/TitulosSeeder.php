@@ -13,6 +13,6 @@ class TitulosSeeder extends Seeder
      */
     public function run(): void
     {
-        Titulos::factory(15)->create();
+        Titulos::factory(50)->create();
     }
 }

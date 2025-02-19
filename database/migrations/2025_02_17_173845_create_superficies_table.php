@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('superficies', function (Blueprint $table) {
             $table->id();// crea una clave primaria y autoincrement por defecto
-            $table->string(column: 'nombre', length:25);
+            $table->string(column: 'nombre');
             $table->timestamps();
         });
     }
