@@ -38,20 +38,20 @@ class TenistasController extends Controller
     }
 
     // funcion para editar tenistas
-    public function edit(Tenistas $tenistas)
+    public function edit(Tenistas $tenista): View
     {
         return view('components.edit', [
-            'tenistas' => $tenistas,
+            'tenista' => $tenista,
             'method'=>'PUT',
-            'actionUrl'=> route('components.update', $tenistas),
-            'submitButtonText' => 'Actualizar tarea'
+            'actionUrl'=> route('components.update', $tenista),
+            'submitButtonText' => 'Actualizar tenista'
         ]);
     }
 
      // funcion para actualizar tenistas
-     public function update(TenistasRequest $request, Tenistas $tenistas): RedirectResponse
+     public function update(TenistasRequest $request, Tenistas $tenista): RedirectResponse
      {
-         $tenistas->update($request->validated());
+         $tenista->update($request->validated());
          return redirect()->route('components.index');
      }
 

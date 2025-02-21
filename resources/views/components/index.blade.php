@@ -72,12 +72,12 @@
                                 {{$tenista->created_at->format('d/m/Y H:i:s')}}
                             </td>
                             <td class="px-6 py-4">
-                                <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                                <a href="{{route('components.edit', $tenista)}}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
                                 Editar
                                 </a>
                                 @if($tenista->completed)
                                 <!-- en href tendremos que poner route('tasks.uncomplete',$task)}}-->
-                                    <a href="{{route('components.edit')}}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
                                     Deshacer
                                     </a>
                                  @endif

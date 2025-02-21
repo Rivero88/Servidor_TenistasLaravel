@@ -33,5 +33,5 @@ Route::get('/indexTenistas/create', [TenistasController::class,"create"])->name(
 Route::post('/indexTenistas', [TenistasController::class,"store"])->name(name:'components.store');
 
 // Rutas para editar
-Route::get('/indexTenistas/{tenistas}/edit', [TenistasController::class,"edit"])->name(name:'components.edit');
-Route::get('/indexTenistas/{tenistas}', [TenistasController::class,"update"])->name(name:'components.update');
+Route::get('/indexTenistas/{tenista}/edit', [TenistasController::class,"edit"])->name(name:'components.edit');
+Route::put('/indexTenistas/{tenista}', [TenistasController::class,"update"])->name(name:'components.update');
