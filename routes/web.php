@@ -31,3 +31,7 @@ Route::get('/indexTenistas', [TenistasController::class,"index"])->name(name:'co
 Route::get('/indexTenistas/create', [TenistasController::class,"create"])->name(name:'components.create');
 // Ruta para ver la directiva @csrf
 Route::post('/indexTenistas', [TenistasController::class,"store"])->name(name:'components.store');
+
+// Rutas para editar
+Route::get('/indexTenistas/{tenistas}/edit', [TenistasController::class,"edit"])->name(name:'components.edit');
+Route::get('/indexTenistas/{tenistas}', [TenistasController::class,"update"])->name(name:'components.update');

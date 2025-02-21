@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Tenistas;
 use App\Http\Requests\TenistasRequest;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\View\View;
 
 class TenistasController extends Controller
 {
@@ -30,9 +31,28 @@ class TenistasController extends Controller
     {
         return view('components.create', [
             'tenista' => new Tenistas(),
+            'method'=>'POST',
             'actionUrl'=> route('components.store'),
             'submitButtonText' => 'Crear'
         ]);
     }
+
+    // funcion para editar tenistas
+    public function edit(Tenistas $tenistas)
+    {
+        return view('components.edit', [
+            'tenistas' => $tenistas,
+            'method'=>'PUT',
+            'actionUrl'=> route('components.update', $tenistas),
+            'submitButtonText' => 'Actualizar tarea'
+        ]);
+    }
+
+     // funcion para actualizar tenistas
+     public function update(TenistasRequest $request, Tenistas $tenistas): RedirectResponse
+     {
+         $tenistas->update($request->validated());
+         return redirect()->route('components.index');
+     }
 
 }
