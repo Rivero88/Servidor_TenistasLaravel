@@ -35,3 +35,6 @@ Route::post('/indexTenistas', [TenistasController::class,"store"])->name(name:'c
 // Rutas para editar
 Route::get('/indexTenistas/{tenista}/edit', [TenistasController::class,"edit"])->name(name:'components.edit');
 Route::put('/indexTenistas/{tenista}', [TenistasController::class,"update"])->name(name:'components.update');
+
+//Ruta para eliminar
+Route::delete('/indexTenistas/{tenista}', [TenistasController::class,"destroy"])->name(name:'components.destroy');

@@ -55,4 +55,11 @@ class TenistasController extends Controller
          return redirect()->route('components.index');
      }
 
+     // funcion para eliminar tenistas
+     public function destroy(Tenistas $tenista): RedirectResponse
+     {
+         $tenista->delete();
+         return redirect()->route('components.index');
+     }
+
 }

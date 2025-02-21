@@ -73,7 +73,7 @@
                             </td>
                             <td class="px-6 py-4">
                                 <a href="{{route('components.edit', $tenista)}}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
-                                Editar
+                                    Editar
                                 </a>
                                 @if($tenista->completed)
                                 <!-- en href tendremos que poner route('tasks.uncomplete',$task)}}-->
@@ -81,9 +81,16 @@
                                     Deshacer
                                     </a>
                                  @endif
-                                <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                                {{-- <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
                                     Eliminar
-                                </a>
+                                </a> --}}
+                                <form action="{{route('components.destroy',$tenista)}}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="font-medium text-green-600 dark:text-green-500 hover:underline{{$tenista->completed?' text-red-600 dark:text-red-500':'text-green-600 dark:text-green-500'}}">
+                                        Eliminar
+                                    </button>
+                                </form>
                             </td>
                         </tr>
                         @empty
