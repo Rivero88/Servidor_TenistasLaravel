@@ -7,14 +7,15 @@ use App\Models\Tenistas;
 use App\Http\Requests\TenistasRequest;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Log;
 
 class TenistasController extends Controller
 {
     // funcion para mostrar el listado de tenistas
     public function index()
     {
-        $tenistas=Tenistas::latest(column: 'id')->paginate(perPage:4);
-        return view('components.index', ['tenistas'=>$tenistas]);
+        $tenistas=Tenistas::oldest(column: 'id')->paginate(perPage:8);
+        return view('components.index_Tenistas', ['tenistas'=>$tenistas]);
     }
 
     //funcion store
@@ -23,27 +24,34 @@ class TenistasController extends Controller
         // dd($request->validated());
         // dd($request->all());
         Tenistas::create($request->validated());
-        return redirect(route('components.index'));
+        return redirect(route('components.index_Tenistas'));
     }
 
     // funcion para crear tenistas
     public function create()
     {
-        return view('components.create', [
+        return view('components.Tenistas.create_Tenistas', [
             'tenista' => new Tenistas(),
             'method'=>'POST',
-            'actionUrl'=> route('components.store'),
+            'actionUrl'=> route('components.store_Tenistas'),
             'submitButtonText' => 'Crear'
         ]);
     }
 
+     // public function edit(Tenistas $tenista): View
+    // {
+    //     dd($tenista); // Muestra el contenido del modelo
+    // }
+    
     // funcion para editar tenistas
     public function edit(Tenistas $tenista): View
     {
-        return view('components.edit', [
+        // Para ver el log de la edición. Cuando se le da al botón editar se crear un log en storage/logs/laravel.log
+        // Log::info('Editando tenista', ['tenista' => $tenista]);
+        return view('components.Tenistas.edit_Tenistas', [
             'tenista' => $tenista,
             'method'=>'PUT',
-            'actionUrl'=> route('components.update', $tenista),
+            'actionUrl'=> route('components.update_Tenistas', $tenista),
             'submitButtonText' => 'Actualizar tenista'
         ]);
     }
@@ -52,14 +60,14 @@ class TenistasController extends Controller
      public function update(TenistasRequest $request, Tenistas $tenista): RedirectResponse
      {
          $tenista->update($request->validated());
-         return redirect()->route('components.index');
+         return redirect()->route('components.index_Tenistas');
      }
 
      // funcion para eliminar tenistas
      public function destroy(Tenistas $tenista): RedirectResponse
      {
          $tenista->delete();
-         return redirect()->route('components.index');
+         return redirect()->route('components.index_Tenistas');
      }
 
 }

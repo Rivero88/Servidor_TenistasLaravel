@@ -9,7 +9,8 @@ class Superficies extends Model
 {
     /** @use HasFactory<\Database\Factories\SuperficiesFactory> */
     use HasFactory;
-
+    
+    // protected $table = 'superficies';
     // Propiedad protegida que define qué atributos de un modelo se pueden asignar de forma masiva
     protected $fillable = ['nombre'];
 

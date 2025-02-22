@@ -16,7 +16,7 @@ class Tenistas extends Model
    // Relación uno a muchos con Tenista - Titulos. 1 tenista muchos titulos
    public function titulos()
    {
-       return $this->hasMany(Titulo::class, 'tenista_id');
+       return $this->hasMany(Titulos::class, 'tenista_id');
    }
 
 
