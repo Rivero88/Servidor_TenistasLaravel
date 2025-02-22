@@ -15,7 +15,7 @@
                      </a>
                  </botton>
             </div>
-            @include('partials.form')
+            @include('components.partials.form')
 
         </div>
     </div>
