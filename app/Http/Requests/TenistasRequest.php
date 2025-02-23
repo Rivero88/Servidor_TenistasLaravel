@@ -26,8 +26,8 @@ class TenistasRequest extends FormRequest
             'nombre' => ['required', 'string', 'max:50', Rule::unique(table:'tenistas',column:'nombre')->ignore($this->tenista)],
             'apellidos' => ['required', 'string', 'max:50', Rule::unique(table:'tenistas',column:'apellidos')->ignore($this->tenista)],
             'mano' => ['required', 'string', 'in:diestro,zurdo'],
-            'altura' => ['required', 'integer', 'min:170'],
-            'anno_nacimiento' => ['required', 'integer', 'min:1980', 'max:2008'],
+            'altura' => ['required', 'integer', 'min:160'],
+            'anno_nacimiento' => ['required', 'integer', 'min:1950', 'max:2008'],
         ];
     }
 
@@ -41,6 +41,7 @@ class TenistasRequest extends FormRequest
             'apellidos.required'=>'El campo apellidos es obligatorio.',
             'apellidos.string'=>'El campo apellidos debe ser una cadena de texto.',
             'apellidos.max'=>'La campo apellidos no debe ser mayor a :max caracteres.',
+            'apellidos.unique'=>'El campo apellidos ya ha sido registrado.',
             'mano.required'=>'El campo mano es obligatorio.',
             'mano.string'=>'El campo mano debe ser una cadena de texto.',
             'mano.in'=>'El campo mano debe ser diestro o zurdo.',

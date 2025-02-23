@@ -27,7 +27,7 @@ class SuperficiesController extends Controller
         ]);
     }
 
-    //funcion store
+    //funcion store para guardar nueva superficie
     public function store(SuperficiesRequest $request): RedirectResponse
     {
         Superficies::create($request->validated());

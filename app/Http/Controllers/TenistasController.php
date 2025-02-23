@@ -18,15 +18,6 @@ class TenistasController extends Controller
         return view('components.index_Tenistas', ['tenistas'=>$tenistas]);
     }
 
-    //funcion store
-    public function store(TenistasRequest $request): RedirectResponse
-    {
-        // dd($request->validated());
-        // dd($request->all());
-        Tenistas::create($request->validated());
-        return redirect(route('components.index_Tenistas'));
-    }
-
     // funcion para crear tenistas
     public function create()
     {
@@ -36,6 +27,15 @@ class TenistasController extends Controller
             'actionUrl'=> route('components.store_Tenistas'),
             'submitButtonText' => 'Crear'
         ]);
+    }
+
+    //funcion store para guardar tenistas nuevos
+    public function store(TenistasRequest $request): RedirectResponse
+    {
+        // dd($request->validated());
+        // dd($request->all());
+        Tenistas::create($request->validated());
+        return redirect(route('components.index_Tenistas'));
     }
 
      // public function edit(Tenistas $tenista): View
@@ -69,5 +69,18 @@ class TenistasController extends Controller
          $tenista->delete();
          return redirect()->route('components.index_Tenistas');
      }
+
+     // funcion para mostrat los titulos de un tenista
+     public function titulosTenista($tenista_id)
+    {
+        // Obtener el tenista por ID
+        $tenista = Tenistas::findOrFail($tenista_id);
+
+        // Obtener solo los títulos del tenista
+        $titulos = $tenista->titulos()->get();
+
+        return view('components.Tenistas.index_Tenistas-Titulos', compact('tenista', 'titulos'));
+    }
+
 
 }

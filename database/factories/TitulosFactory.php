@@ -21,11 +21,9 @@ class TitulosFactory extends Factory
         // Vamos a usar faker para generar datos aleatorios y enlazar con las otras tablas
        return [
         // randomElement para que se elija fecha dentro del rango
-        'anno' => $this->faker->randomElement(range(1960, 2025)),
-        // 'tenista_id' => Tenistas::factory(),  // Relación con Tenistas
-        'tenista_id' => Tenistas::inRandomOrder()->first()->id ?? Tenistas::factory()->create()->id,
-        // 'torneo_id' => Torneos::factory(),  // Relación con Torneos
-        'torneo_id' => Torneos::inRandomOrder()->first()->id ?? Torneos::factory()->create()->id,
+        'anno' => $this->faker->randomElement(range(1960, 2025)), 
+        'tenista_id' => Tenistas::inRandomOrder()->first()->id ?? Tenistas::factory()->create()->id,// Relación con Tenistas
+        'torneo_id' => Torneos::inRandomOrder()->first()->id ?? Torneos::factory()->create()->id,// Relación con Torneos
         ];
     }
 }

@@ -16,6 +16,14 @@
       <span class="text-red-500 text-sm"> {{$message}}</span>
     @enderror
   </div>
+
+  <div class="mb-5">
+    <label for="altura" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Altura</label>
+    <input type="number" name="altura" placeholder="Escribe altura" id="altura" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="{{ old('altura', $tenista->altura) }}"/>
+    @error('altura')
+      <span class="text-red-500 text-sm"> {{$message}}</span>
+    @enderror
+  </div>
   
   <div class="mb-5">
     <label for="mano" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Mano con la que juega</label>
@@ -26,16 +34,8 @@
   </div>
   
   <div class="mb-5">
-    <label for="altura" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Altura</label>
-    <input type="text" name="altura" placeholder="Escribe altura" id="altura" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="{{ old('altura', $tenista->altura) }}"/>
-    @error('altura')
-      <span class="text-red-500 text-sm"> {{$message}}</span>
-    @enderror
-  </div>
-  
-  <div class="mb-5">
     <label for="anno_nacimiento" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Año de nacimiento</label>
-    <input type="text" name="anno_nacimiento" placeholder="Escribir año nacimiento" id="anno_nacimiento" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="{{ old('anno_nacimiento', $tenista->anno_nacimiento) }}" />
+    <input type="number" name="anno_nacimiento" placeholder="Escribir año nacimiento" id="anno_nacimiento" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="{{ old('anno_nacimiento', $tenista->anno_nacimiento) }}" />
     @error('anno_nacimiento')
       <span class="text-red-500 text-sm"> {{$message}}</span>
     @enderror

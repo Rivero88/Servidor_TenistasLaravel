@@ -10,7 +10,7 @@ class SuperficiesSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     * Al ponerlo aqui a mano sustiye lo que he puesto en el randomElement del factory, si falla porbar a quitar esto.
+     * Al ponerlo aqui a mano sustiye lo que he puesto en el randomElement del factory.
      */
     public function run(): void
     {

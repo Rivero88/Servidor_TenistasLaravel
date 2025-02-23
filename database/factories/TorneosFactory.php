@@ -20,9 +20,8 @@ class TorneosFactory extends Factory
         // Vamos a usar faker para generar datos aleatorios
         return [
             'nombre' => $this->faker->word() . ' Open',  // Nombre aleatorio con "Open" agregado
-            'ciudad' => $this->faker->city(),  // Ciudad aleatoria (ej. 'Madrid', 'París')
-            // 'superficie_id' => Superficies::factory(),  // Relación con Superficies
-            'superficie_id' => Superficies::inRandomOrder()->first()->id ?? Superficies::factory()->create()->id,
+            'ciudad' => $this->faker->city(), 
+            'superficie_id' => Superficies::inRandomOrder()->first()->id ?? Superficies::factory()->create()->id,// Relación con Superficies
 
         ];
     }

@@ -15,10 +15,7 @@ return new class extends Migration
             $table->id();// crea una clave primaria y autoincrement por defecto
             $table->string(column: 'nombre', length:60);
             $table->string(column: 'ciudad', length:60);
-            // Asocia el torneo a la superficie por el id (foreignId('superficie_id')).
-            // Clave foranea (constrained('superficies')) .
-            // onDelete('cascade')--> Si se borra un registro en superficies, todos los torneos asociados también se eliminarán. No lo uso porque en nuestor modelo 
-            // pone on detele restrict
+            // Asocia el torneo a la superficie por el id (foreignId('superficie_id')). // Clave foranea (constrained('superficies')) .
             $table->foreignId('superficie_id')->constrained('superficies'); 
             $table->timestamps();
         });

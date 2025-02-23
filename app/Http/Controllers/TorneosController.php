@@ -32,18 +32,7 @@ class TorneosController extends Controller
         ]);
     }
 
-    // funcion store ko --> Torneos::create($request->validated()); crea el torneo pero no lo guarda en una variable.
-    // Luego al intentar acceder a $torneo->superficie_id, $torneo es null.
-    // public function store(TorneosRequest $request): RedirectResponse
-    // {
-    //     Torneos::create($request->validated());
-    //     $torneo->superficie_id = $request->superficie_id;
-    //     $torneo->save();
-    //     return redirect(route('components.index_Torneos'));
-    // }
-
-    // funcion store ok --> El resultado de Torneos::create se guarda en  $torneo.
-    // Se usa + ['superficie_id' => $request->superficie_id] para incluir superficie_id en la creación.
+    // funcion store para guardar torneos nuevos
     public function store(TorneosRequest $request): RedirectResponse
     {
             // Crear el torneo con los datos validados, incluyendo superficie_id

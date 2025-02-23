@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id(); // crea una clave primaria y autoincrement por defecto
             $table->string(column: 'nombre', length:50);
             $table->string(column: 'apellidos', length:100);
-            $table->enum('mano', ['diestro', 'zurdo']);
+            $table->enum('mano', ['diestro', 'zurdo']); // solo se puede elegir entre diestro o zurdo
             $table->integer('altura');
             $table->integer('anno_nacimiento');
             $table->timestamps();

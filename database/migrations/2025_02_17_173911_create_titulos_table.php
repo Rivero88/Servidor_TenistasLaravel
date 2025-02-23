@@ -14,8 +14,7 @@ return new class extends Migration
         Schema::create('titulos', function (Blueprint $table) {
             $table->id();// crea una clave primaria y autoincrement por defecto
             $table->integer(column: 'anno');
-            // Asocia el titulo al tenista y al torneo por el id (foreignId('----')).
-            // Clave foranea (constrained('----')) .
+            // Asocia el titulo al tenista y al torneo por el id (foreignId('----')). Clave foranea (constrained('----')) .
             $table->foreignId('tenista_id')->constrained('tenistas'); 
             $table->foreignId('torneo_id')->constrained('torneos'); 
             $table->timestamps();

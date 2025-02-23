@@ -19,7 +19,7 @@ class Titulos extends Model
         return $this->belongsTo(Tenistas::class, 'tenista_id');
     }
 
-    // Relación muchos a uno con Titulos - Torneo. Muchos titulos (por año) de un torneo son ganados por tenistas 
+    // Relación muchos a uno con Titulos - Torneo. Muchos titulos (por año) de un torneo 
     public function torneo()
     {
         return $this->belongsTo(Torneos::class, 'torneo_id');
